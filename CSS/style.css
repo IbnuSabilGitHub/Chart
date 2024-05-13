@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'NamaFont';
+    /* Ganti 'NamaFont' dengan nama font yang ingin Anda berikan */
+    src: local('Axiforma'),
+        /* Nama font untuk digunakan pada local machine */
+        url('ASET/FONT/Axiforma/Axiforma-Medium.otf') format('otf');
+    /* Lokasi font di dalam proyek Anda */
+}
+
+.container{
+    padding: 2%;
+}
+
+.title-app{
+}
+.title-app h1{
+    font-size: 3em;
+    font-family: 'Axiforma';
+    font-weight: bold;
+    /* margin-bottom: .1em; */
+}
+
+.title-app p{
+    font-size: 1em;
+    font-family: 'Axiforma';
+}
+
+.warpChart{
+    width: 100%;
+    padding: 2%;
+    border-radius: .5em;
+    background-color: rgba(0, 0, 0, 0.139);
+    height: 50em;
+    font-family: 'Axiforma';
+}
+
+.warpChart h2{
+    font-size: 1.2em;
+}
