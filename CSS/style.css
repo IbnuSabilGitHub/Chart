@@ -26,14 +26,67 @@
 }
 
 .warpChart{
-    width: 100%;
     padding: 2%;
     border-radius: .5em;
-    background-color: rgba(0, 0, 0, 0.139);
+    background-color: #021b1a48;
     height: 50em;
     font-family: 'Axiforma';
 }
 
 .warpChart h2{
     font-size: 1.2em;
+}
+
+
+
+
+/* Responsif */
+/* Tampilan responsif untuk perangkat dengan lebar 1025px hingga 1440px (tablet besar dan layar laptop) */
+@media screen and (max-width: 1440px) {
+
+    html {
+        font-size: 70%;
+    }
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+    /* Atur tampilan sesuai dengan kebutuhan Anda */
+    html {
+        font-size: 40%;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    /* Atur tampilan sesuai dengan kebutuhan Anda */
+    html {
+        font-size: 30%;
+    }
+
+}
+
+@media screen and (max-width: 300px) {
+
+    /* Atur tampilan sesuai dengan kebutuhan Anda */
+    html {
+        font-size: 25%;
+    }
+}
+
+
+/* if screen hight 510 */
+@media screen and (max-height:600px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media screen and (max-height:300px) {
+    html {
+        font-size: 40%;
+    }
 }

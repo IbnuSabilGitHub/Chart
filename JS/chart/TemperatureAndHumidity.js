@@ -1,44 +1,52 @@
-export const config = {
-    type: 'line',
-    data: variabel,
-    options: {
-        responsive: true,
-        duration: 200,
-        interaction: {
-            intersect: true
-        },
-        plugins: {
-            legend: false,
-            title: {
-                display: true,
-                text: 'Temperature And Humidity'
-            }
-        }
-    }
-}
-
-export const variabel = {
+export const data = {
     labels: [],
     datasets: [
         {
             label: 'Temperature',
             data: [],
-            borderColor: '#02f775',
-            backgroundColor: '#b7bdba',
-            pointStyle: 'circle',
-            pointRadius: 3,
-            pointHoverRadius: 5,
-            borderWidth: 1
+            borderColor: '#ff5470',
+            backgroundColor: '#ff5470',
+            pointHoverRadius: 5
         },
         {
-            label: 'Temperature',
+            label: 'Humidity',
             data: [],
-            borderColor: '#00f7ff',
-            backgroundColor: '#b7bdba',
-            pointStyle: 'circle',
-            pointRadius: 3,
-            pointHoverRadius: 5,
-            borderWidth: 1
+            borderColor: '#7f5af0',
+            backgroundColor: '#7f5af0',
+            pointHoverRadius: 5
         }
     ]
+};
+
+export const config = {
+    type: 'line',
+    data: data,
+    options: {
+        responsive: true,
+        duration: 200,
+        plugins: {
+            legend: true,
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Month'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Value'
+                },
+                type: 'logarithmic',
+                min: 0,
+                max: 100,
+                ticks: {
+                    // forces step size to be 50 units
+                    stepSize: 10
+                }
+            }
+        }
+    }
 };

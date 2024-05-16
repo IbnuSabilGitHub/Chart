@@ -1,6 +1,5 @@
 // Ambil data dari ThingSpeak menggunakan API
-const apiUrl = 'https://api.thingspeak.com/channels/...../feeds.json?api_key=?.......';
-let channelData = []; // Variabel untuk menyimpan data dari API ThingSpeak
+const apiUrl = 'https://api.thingspeak.com/channels/2538565/feeds.json?api_key=WXUH7ZC8TOQGZS7Z';
 
 
 // Fungsi untuk mengambil data terbaru dari ThingSpeak
@@ -13,32 +12,12 @@ function fetchDataFromThingSpeak() {
             return response.json(); // Mengubah respons ke format JSON
         })
         .then(data => {
-            // Cek apakah terdapat perubahan data
-            const newFeeds = data.feeds.filter(feed => {
-                // Filter hanya entri yang belum ada di channelData
-                return !channelData.some(existingFeed => existingFeed.entry_id === feed.entry_id);
-            });
-
-            // Tambahkan entri baru ke channelData
-            channelData.push(...newFeeds);
-
-            console.log('Updated Data from ThingSpeak:', channelData);
-
-            // Sekarang Anda dapat melakukan sesuatu dengan data terbaru
-            processUpdatedData(newFeeds);
+            localStorage.setItem('apiData', JSON.stringify(data)); // Simpan data ke Local Storage
         })
         .catch(error => {
             console.error('Error fetching data:', error);
         });
 }
 
-// Fungsi untuk memproses data terbaru
-function processUpdatedData(newData) {
-    // Lakukan sesuatu dengan data terbaru, misalnya tampilkan di halaman web
-    newData.forEach(feed => {
-        console.log(`New Entry - Created At: ${feed.created_at}, Field Value: ${feed.field1}`);
-    });
-}
 
-// Panggil fetchDataFromThingSpeak() secara berkala setiap 10 detik
-setInterval(fetchDataFromThingSpeak, 10000); // 10 detik (10000 milidetik)
+fetchDataFromThingSpeak();
